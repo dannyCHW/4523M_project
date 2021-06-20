@@ -16,8 +16,6 @@ label.logo{
 nav.head ul{
 	float:right;
 	margin-right:40px;
-	width: auto;
-		line-height:70px;
 }
 nav.head li{
 	display: inline-block;
@@ -38,7 +36,6 @@ nav.head a.active,nav.head a:hover{
 	border:1px solid white;
 }
 div.slider{
-	background-color: black;
 	width:100%;
 	top: 0;
 	height:400px;
