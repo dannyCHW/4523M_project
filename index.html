@@ -3,7 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<title>First Page</title>
+	<meta name = "viewport" content="width=device-width, initial-scale=1.0">
+	<script src="http://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
 	<link rel = "stylesheet" href="style.css">
+	<script>
+	$(document).ready(function(){
+		$('#icon').click(function(){
+			$('ul').toggleClass('show');
+		});
+	});
+	</script>
 </head>
 
 
@@ -11,11 +21,14 @@
 	<nav class="head">
 		<label class = "logo">EDE Delivery</label>
 			<ul>
-				<li><a href="#">Home</a></li>
+				<li><a class="active" href="#">Home</a></li>
 				<li><a href="#">Shipping</a></li>
 				<li><a href="#">Tracking</a></li>
 				<li><a href="#">Account</a></li>
 			</ul>
+			<label id="icon">
+				<i class="fas fa-bars"></i>
+			</label>
 	</nav>
 	<div class="slider">
 	</div>
