@@ -1,4 +1,4 @@
-nav{
+nav.head{
 	height:70px;
 	width:100%;
 	background:	#6B13D1;
@@ -11,18 +11,18 @@ label.logo{
 	font-weight:bold;
 	color:white;
 	padding:80px;
-	line-height:70px;	
+	line-height:70px;
 }
-nav ul{
+nav.head ul{
 	float:right;
 	margin-right:40px;
 }
-nav li{
+nav.head li{
 	display: inline-block;
 	margin: 0 8px;
 	line-height:40px;
 }
-nav a{
+nav.head a{
 	color:white;
 	font-size:18px;
 	text-transform:uppercase;
@@ -30,6 +30,13 @@ nav a{
 	padding:7px 10px;
 	border-radius:3px;
 }
-a.active,a:hover{
+nav.head a.active,nav.head a:hover{
 	border:1px solid white;
+}
+div.slider{
+	background-color: black;
+	width:100%;
+	top: 0;
+	height:400px;
+	background-image:url('country.jpg');
 }
