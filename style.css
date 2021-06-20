@@ -1,3 +1,4 @@
+/* Main Page Start */
 nav.head{
 	height:70px;
 	width:100%;
@@ -69,7 +70,7 @@ nav #icon{
 		height:auto;
 		background:#2f3640;
 		top:80px;
-		left:-100%;
+		left:-125%;
 		text-align: center;
 		transition: all .5s;
 	}
@@ -172,3 +173,4 @@ input[type=text], input[type=password] {
   }
 
   
+/* Main Page End */
