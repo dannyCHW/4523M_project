@@ -13,3 +13,23 @@ label.logo{
 	padding:80px;
 	line-height:70px;	
 }
+nav ul{
+	float:right;
+	margin-right:40px;
+}
+nav li{
+	display: inline-block;
+	margin: 0 8px;
+	line-height:40px;
+}
+nav a{
+	color:white;
+	font-size:18px;
+	text-transform:uppercase;
+	border:1px solid transparent;
+	padding:7px 10px;
+	border-radius:3px;
+}
+a.active,a:hover{
+	border:1px solid white;
+}
