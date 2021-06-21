@@ -1,1 +1,46 @@
-
+body, html {
+  height: 100%;
+}
+body{
+  height: 100%;
+  background:url('./stafflogin3.jpg') no-repeat;
+  background-size: cover;
+  font-weight: bold;
+}
+.staff-login{
+  width: 350px;
+  top:40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+}
+.staff-login h1{
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 40px 0;
+  color: rgb(193, 37, 196)
+}
+.staff-login p{
+  font-size: 30px;
+  margin: 15px 0;
+  font-weight: bold;
+  color:#0bbbe2;
+}
+.staff-login input{
+  font-size: 16px;
+  width:100%;
+  padding: 15px 10px;
+  border: 0;
+  outline: none;
+  border-radius: 5px;
+}
+.staff-login button{
+  font-size:18px;
+  font-weight:bold;
+  margin:20px 0;
+  padding: 10px 15px;
+  width: 50%;
+  border-radius: 5px;
+  border:0;
+}
