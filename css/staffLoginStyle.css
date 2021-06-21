@@ -12,7 +12,7 @@ body{
   top:40%;
   left: 50%;
   transform: translate(-50%,-50%);
-  position: absolute;
+  position: relative;
 }
 .staff-login h1{
   font-size: 50px;
