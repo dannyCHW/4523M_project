@@ -19,14 +19,15 @@
 
 
 <body>
-	
+
 	<nav class="head">
 		<label class = "logo">EDE Delivery</label>
 			<ul>
 				<li><a class="active" href="index.html">Home</a></li>
 				<li><a href="Shipment.html">Shipping</a></li>
-				<li><a href="#">Tracking</a></li>	
+				<li><a href="#">Tracking</a></li>
 				<li><a href="register.html">Create Account</a></li>
+				<li><a href="staffLogin.html">Staff</a></li>
 			</ul>
 			<label id="icon">
 				<i class="fas fa-bars"></i>
@@ -34,7 +35,7 @@
 	</nav>
 
 	<!-- required input from customer : location, receiverName, receiverPhoneNum, receiverAddress, weight -->
-	
+
 </br></br></br>
 <center>
 <h1 class="r_text">Create the delivery request</h1>
@@ -49,7 +50,7 @@
 		  </div>
 		  <div class="row">
 			  <label for="rPhoneNum">Receiver Phone Number</label>
-			  <input type="text" id="rPhoneNum" name="receiverPhoneNum" placeholder="852-12345678" 
+			  <input type="text" id="rPhoneNum" name="receiverPhoneNum" placeholder="852-12345678"
 			  pattern="[0-9]{3}-[0-9]{8}" required>
 		  </div>
 		  <div class="row">
@@ -60,10 +61,10 @@
 		  </div>
 		</br>
 		  <div class="row">
-			
+
 			  <label for="receiverAddress">Subject</label>
 			  <textarea id="receiverAddress" name="receiverAddress" placeholder="plase fill in the receiver address.." style="height:100px" required></textarea>
-			
+
 		  </div>
 
 		</br>
