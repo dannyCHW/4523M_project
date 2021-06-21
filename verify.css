@@ -1,0 +1,60 @@
+input{
+  height: auto;
+  width: auto;
+  padding: 20px;
+  margin: 20px;
+  font-size: 20px;
+}
+div.form{
+  font-family:Arial;
+  display: block;
+  text-align: center;
+}
+div.form input.accept{
+  background-color: rgb(23, 207, 63);
+  font-weight: bold;
+  color: rgb(0, 74, 238);
+}
+div.form input.reject{
+  background-color: red;
+  font-weight: bold;
+  color: rgb(200, 241, 0);
+}
+
+.content-table{
+  border-collapse:collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width:auto;
+  width: 100%;
+  border-radius: 5px 5px 0 0 ;
+  overflow: hidden;
+}
+.content-table thead tr{
+  background: #6B13D1;
+  color:#ffffff;
+  text-align: Center;
+  font-weight: bold;
+  width: 70px;
+}
+.content-table th{
+
+}
+.content-table td{
+  padding: 12px 15px;
+    text-align: Center;
+}
+.content-table tbody tr{
+  border-bottom: :1px solid #dddddd;
+}
+.content-table tbody tr:nth-of-type(even){
+  /* not work */
+  background-color: #f3f3f3;
+}
+.content-table tbody tr:last-of-type{
+  border-bottom: 2px solid #6B13D1;
+}
+h1{
+  text-align: left;
+  color:rgb(227, 25, 55);
+}
