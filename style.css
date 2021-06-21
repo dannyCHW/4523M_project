@@ -52,19 +52,7 @@ nav #icon{
 	cursor:pointer;
 	display:none;
 }
-@media (max-width:1048px){
-	label.logo{
-		font-size:32px;
-		padding-left:60px;
-	}
-	nav ul{
-		margin-right: 20px;
-	}
-	nav a{
-		font-size: 17px;
-	}
-}
-@media (max-width:1000px){
+@media (max-width:1150px){
 	nav #icon{
 		display:block;
 	}
@@ -74,7 +62,7 @@ nav #icon{
 		height:auto;
 		background:#2f3640;
 		top:80px;
-		left:-125%;
+		left:-200%;
 		text-align: center;
 		transition: all .5s;
 	}
@@ -141,7 +129,7 @@ input[type=text], input[type=password] {
 	border: none;
 	background: #f1f1f1;
   }
-  
+
   input[type=text]:focus, input[type=password]:focus {
 	background-color: #ddd;
 	outline: none;
@@ -160,7 +148,7 @@ input[type=text], input[type=password] {
 	width: 50%;
 	opacity: 0.9;
   }
-  
+
   .registerbtn:hover {
 	opacity:1;
   }
@@ -176,5 +164,5 @@ input[type=text], input[type=password] {
 	color:#504a57;
   }
 
-  
+
 /* Main Page End */

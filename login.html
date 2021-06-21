@@ -19,10 +19,11 @@
   <nav class="head">
 		<label class = "logo">EDE Delivery</label>
 			<ul>
-				<li><a class="active" href="#">Home</a></li>
-				<li><a href="#">Shipping</a></li>
+				<li><a class="active" href="index.html">Home</a></li>
+				<li><a href="Shipment.html">Shipping</a></li>
 				<li><a href="#">Tracking</a></li>
-				<li><a href="#">Account</a></li>
+				<li><a href="register.html">Create Account</a></li>
+				<li><a href="staffLogin.html">Staff</a></li>
 			</ul>
 			<label id="icon">
 				<i class="fas fa-bars"></i>
@@ -37,7 +38,7 @@
 	<div class="form-container sign-up-container">
 		<form action="#">
 			<h1>Create Account</h1>
-			<button>Sign Up</button>
+		<button>	<a href="register.html" style="color:white;">Sign Up</a></button>
 		</form>
 	</div>
 		<!-- /signup table end-->
@@ -48,8 +49,8 @@
 			<h1>Sign in</h1>
 			<div class="social-container">
 			</div>
-			<input type="email" placeholder="Email" style="width: 100%;"/>
-			<input type="password" placeholder="Password" style="width: 100%;"/>
+			<input type="email" placeholder="Email" style="width: 100%;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="following order: Wrong Email Or Password Format"required/>
+			<input type="password" placeholder="Password" style="width: 100%;" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="following order:Wrong Email Or Password Format" required/>
 			<a href="#">Forgot your password?</a>
 			<button>Sign In</button>
 		</form>
