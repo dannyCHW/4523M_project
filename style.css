@@ -1,4 +1,8 @@
 /* Main Page Start */
+body{
+	background-color: whitesmoke;
+}
+
 nav.head{
 	height:70px;
 	width:100%;
