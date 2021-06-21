@@ -1,0 +1,172 @@
+/* Main Page Start */
+body{
+	background-color: whitesmoke;
+}
+
+nav.head{
+	height:70px;
+	width:100%;
+	background:	#6B13D1;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+label.logo{
+	font-size:35px;
+	font-weight:bold;
+	color:white;
+	padding:80px;
+	line-height:70px;
+}
+nav.head ul{
+	float:right;
+	margin-right:40px;
+	width: auto;
+	line-height:40px;
+}
+nav.head li{
+	display: inline-block;
+	margin: 0 8px;
+	line-height:25px;
+}
+nav.head a{
+	display: block;
+	text-decoration: none;
+	color:white;
+	font-size:18px;
+	text-transform:uppercase;
+	border:1px solid transparent;
+	padding:7px 10px;
+	border-radius:3px;
+}
+nav.head a.active,nav.head a:hover{
+	border:1px solid white;
+	transition: .5s;
+}
+nav #icon{
+	color:white;
+	font-size: 30px;
+	line-height: 80px;
+	float:right;
+	margin-right:40px;
+	cursor:pointer;
+	display:none;
+}
+@media (max-width:1150px){
+	nav #icon{
+		display:block;
+	}
+	nav ul{
+		position: fixed;
+		width: 100%;
+		height:auto;
+		background:#2f3640;
+		top:80px;
+		left:-200%;
+		text-align: center;
+		transition: all .5s;
+	}
+	nav li{
+		display: block;
+		margin:50px 0;
+		line-height: 30px;
+	}
+	nav a{
+		font-size: 20px;
+	}
+	a.active,a:hover{
+		border:none;
+		color:#6B13D1;
+	}
+	nav ul.show{
+		left:0;
+	}
+}
+
+div.slider{
+	width:auto;
+	padding:0px;
+	margin: 0px;
+	top: 0;
+	height:400px;
+	background-image:url('country.jpg');
+}
+div.Mian_Title h1{
+	text-align:center;
+}
+div.Mian_Title h3{
+	text-align:center;
+}
+.start {
+	background-color:#ffffff;
+	border-radius:28px;
+	border:1px solid #0dcfff;
+	display:inline-block;
+	cursor:pointer;
+	color:#3de8ff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:18px 33px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+
+.subTitle h1{
+	text-align:center;
+}
+
+.subTitle h1{
+	text-align:center;
+}
+
+
+input[type=text], input[type=password] {
+	width: 50%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+  }
+
+  input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+  }
+
+
+
+/* Set a style for the submit/register button */
+.registerbtn {
+	background-color: #6B13D1;
+	color: white;
+	padding: 16px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 50%;
+	opacity: 0.9;
+  }
+
+  .registerbtn:hover {
+	opacity:1;
+  }
+
+
+  .slideshow-container {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+  }
+
+  .r_text{
+	color:#504a57;
+  }
+
+
+/* Main Page End */
+
+
+
+
