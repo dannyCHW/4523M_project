@@ -48,8 +48,8 @@
 			<h1>Sign in</h1>
 			<div class="social-container">
 			</div>
-			<input type="email" placeholder="Email" style="width: 100%;"/>
-			<input type="password" placeholder="Password" style="width: 100%;"/>
+			<input type="email" placeholder="Email" style="width: 100%;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="following order: Wrong Email Or Password Format"required/>
+			<input type="password" placeholder="Password" style="width: 100%;" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="following order:Wrong Email Or Password Format" required/>
 			<a href="#">Forgot your password?</a>
 			<button>Sign In</button>
 		</form>
