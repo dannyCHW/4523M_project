@@ -1,0 +1,17 @@
+h1{
+  text-align: center;
+}
+div{
+  text-align: center;
+}
+input{
+  font-size: 20px;
+}
+.Delete{
+  width: 10%;
+  background: red;
+  margin: 20px;
+}
+.checkbox{
+  margin: 20px;
+}
