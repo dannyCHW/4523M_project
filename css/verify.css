@@ -3,7 +3,7 @@ input{
   width: auto;
   padding: 20px;
   margin: 20px;
-  font-size: 20px;
+  font-size: 10px;
 }
 div.form{
   font-family:Arial;
@@ -14,11 +14,13 @@ div.form input.accept{
   background-color: rgb(23, 207, 63);
   font-weight: bold;
   color: rgb(0, 74, 238);
+  width: 10%;
 }
 div.form input.reject{
   background-color: red;
   font-weight: bold;
   color: rgb(200, 241, 0);
+  width: 10%;
 }
 
 .content-table{
