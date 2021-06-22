@@ -45,3 +45,13 @@ body{
   border-radius: 5px;
   border:0;
 }
+a{
+  font-size:18px;
+  font-weight:bold;
+  margin:20px 0;
+  padding: 10px 15px;
+  width: 50%;
+  border-radius: 5px;
+  border:0;
+  text-decoration:none
+}
