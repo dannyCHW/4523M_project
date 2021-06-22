@@ -47,6 +47,18 @@
             cursor: pointer;
             width: 20%;
             opacity: 0.9;
+            
+        }
+
+        .backbtn{
+            background-color: #6B13D1;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            opacity: 0.9;
         }
     </style>
 
@@ -87,17 +99,24 @@
         </form>
 
         
+        <form>
 
         <center>
             <label>Enter Password: </label>
             <input type="password" class="p_input" id="Pwd" name="Pwd" placeholder="Enter Password">
-            <button type="submit" class="deletebtn">Delete Account</button>
+            <button type="submit" class="deletebtn"><b>Delete Account</b></button>
+
+            
         </center>
     </div>
 
     </form>
 
+    <center>
+    <br><button class="backbtn" onclick="location.href='profile.html';" >Back</button>
+</center>
 
+    
 
 
 </body>
