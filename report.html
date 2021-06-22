@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>First Page</title>
+	<meta name = "viewport" content="width=device-width, initial-scale=1.0">
+	<link rel = "stylesheet" href="css/style.css">
+  	<link rel = "stylesheet" href="css/report.css">
+	<script src="http://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('#icon').click(function(){
+			$('ul').toggleClass('show');
+		});
+	});
+	</script>
+</head>
+
+
+<body>
+	<nav class="head">
+		<label class = "logo">EDE Delivery</label>
+			<ul>
+				<li><a href="verify.html">Verify</a></li>
+				<li><a href="update.html">Update</a></li>
+				<li><a href="report.html">View Report</a></li>
+				<li><a href="staffManage.html">Manage</a></li>
+        <li><a href="stafflogin.html">Logout</a></li>
+			</ul>
+			<label id="icon">
+				<i class="fas fa-bars"></i>
+			</label>
+	</nav>
+  <br/><br/><br/><br/>
+  <h1>Waiting Verify Airway-bill:</h1>
+
+  <table class="content-table">
+
+    <thead>
+
+      <tr>
+        <th>Bill NO.</th><th>Customer's Email</th><th>Customer's Name</th><th>Staff ID</th><th>Date</th><th>Receiver Name</th><th>Receiver Phone</th><th>Weight</th><th>Total Price</th>
+      </tr>
+      <!-- fake record -->
+      <tbody>
+        <tr>
+          <td>00000031</td><td>simonhkg2002@gmail.com</td><td>Hotchner Cheung</td><td>010</td><td>22/6/2021</td><td>Tai Man</td><td>93846166</td><td>43(kg)</td><td>3720</td>
+        </tr>
+        <tr>
+          <td>00000031</td><td>simonhkg2002@gmail.com</td><td>Hotchner Cheung</td><td>010</td><td>22/6/2021</td><td>Tai Man</td><td>93846166</td><td>43(kg)</td><td>3720</td>
+        </tr>
+        <tr>
+          <td>00000031</td><td>simonhkg2002@gmail.com</td><td>Hotchner Cheung</td><td>010</td><td>22/6/2021</td><td>Tai Man</td><td>93846166</td><td>43(kg)</td><td>3720</td>
+        </tr>
+        <tr>
+          <td>00000031</td><td>simonhkg2002@gmail.com</td><td>Hotchner Cheung</td><td>010</td><td>22/6/2021</td><td>Tai Man</td><td>93846166</td><td>43(kg)</td><td>3720</td>
+        </tr>
+
+      </tbody>
+      <!-- fake record end -->
+    </thead>
+
+  </table>
+
+
+</body>
+</html>
