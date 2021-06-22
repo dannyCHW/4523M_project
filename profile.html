@@ -37,6 +37,17 @@
             width: 20%;
             opacity: 0.9;
         }
+
+        .deletebtn{
+            background-color: #d11313;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 20%;
+            opacity: 0.9;
+        }
     </style>
 
     <script src="http://kit.fontawesome.com/a076d05399.js"></script>
@@ -100,7 +111,7 @@
                 <input type="checkbox" id="address_check" name="address_check" value="address_check">
                 <br>
 
-                <hr><br>
+                <br>
 
         </center>
 
@@ -110,8 +121,18 @@
             <button type="submit" class="Updatebtn">Update profile</button>
         </center>
 
+        </form>
 
-        
+        <hr>
+
+        <center>
+
+        <h1 class="r_text">Delete Account</h1>
+            <p class="r_text">Click the button if you need to delete your profile.</p>
+            <button onclick="location.href='deleteAccount.html';" class="deletebtn">Delete Account</button>
+            <hr>
+
+        </center>
     </div>
 
     </form>
