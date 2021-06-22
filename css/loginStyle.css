@@ -35,7 +35,9 @@ a {
 	color: #333;
 	font-size: 14px;
 	text-decoration: none;
-	margin: 15px 0;
+}
+.signInButton{
+		margin: 15px 0;
 }
 
 button {
