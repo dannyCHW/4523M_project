@@ -1,9 +1,9 @@
 input{
   height: auto;
   width: auto;
-  padding: 20px;
+  padding: 15px;
   margin: 20px;
-  font-size: 10px;
+  font-size: 15px;
 }
 div.form{
   font-family:Arial;
@@ -57,6 +57,5 @@ div.form input.reject{
   border-bottom: 2px solid #6B13D1;
 }
 h1{
-  text-align: left;
-  color:rgb(227, 25, 55);
+  text-align: center;
 }

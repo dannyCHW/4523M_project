@@ -25,3 +25,18 @@ body h1{
 .content-table tbody tr:last-of-type{
   border-bottom: 2px solid #6B13D1;
 }
+div.search input.btnSearch{
+  background-color: #6B13D1;
+  color:white;
+  width: 10%;
+}
+
+div.search input{
+  font-weight: bold;
+  font-size: 20px;
+  margin: 25px;
+  padding: 10px;
+}
+div.search{
+  text-align: center;
+}
