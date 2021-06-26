@@ -15,3 +15,45 @@ input{
 .checkbox{
   margin: 20px;
 }
+.btnSearch{
+  background-color: #6B13D1;
+  margin: 20px;
+  color: #fff;
+  width: 10%;
+}
+input{
+  font-weight: bold;
+  font-size: 20px;
+  margin: 25px;
+  padding: 10px;
+}
+.content-table {
+  width: 100%;
+}
+.content-table thead tr{
+  background: #6B13D1;
+  color:#ffffff;
+  text-align: Center;
+  font-weight: bold;
+  width: auto;
+}
+.content-table td{
+  padding: 12px 15px;
+    text-align: Center;
+}
+.content-table tbody tr{
+  border-bottom: :1px solid #dddddd;
+}
+.content-table tbody tr:nth-of-type(even){
+  /* not work */
+  background-color: #f3f3f3;
+}
+.content-table tbody tr:last-of-type{
+  border-bottom: 2px solid #6B13D1;
+}
+.btnDelete{
+  background-color: red;
+  width: 50px;
+  font-weight: bold;
+  color: #fff;
+}
