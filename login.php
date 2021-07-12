@@ -1,6 +1,6 @@
 
 <?php 
-if(isset($_POST['cusEmail'])){
+if(isset($_POST['submit'])){
     $email = $_POST['cusEmail'];
     $pwd = $_POST['cusPassword'];
     require_once('connectDB.php');
@@ -9,21 +9,29 @@ if(isset($_POST['cusEmail'])){
     if(mysqli_num_rows($rs) <= 0){
         echo "<script type='text/javascript'>
         alert('Invaild! User does not exist.');
-        window.location.href = 'login.html';
+        window.location.href = 'loginHtml.php';
         </script>";
         
     } else {
         $rc = mysqli_fetch_assoc($rs);
 
-        if($rc['customerEmail'] != $email || $rc['customerPassword'] != $pwd){
-            echo "<h1>Wrong email or password</h1>";
-            // header("Location: login.html");
-            // exit();
+        if($rc['customerEmail'] != $email || $rc['customerPassword'] != $_POST['cusPassword']){
+            // echo "<script type='text/javascript'>
+            // alert('Wrong email or password');
+            // window.location.href = 'loginHtml.php';
+            // </script>";
+            echo $rc['customerEmail']," | ", $rc['customerPassword']," | ", $email," | ", $_POST['cusPassword'];
+
         } else {
-            echo "<h1>Hello $rc[sName]</h1>";
+            echo "<h1>Hello $rc[customerEmail]</h1>";
             session_start();
             $_SESSION['customerEmail'] = $email;
-            echo 'Login';
+
+            echo "<script type='text/javascript'>
+            alert('Login');
+            window.location.href = 'loginHtml.php';
+            </script>";
+
         }
         
         
