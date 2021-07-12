@@ -18,19 +18,7 @@
 
 
 <body>
-	<nav class="head">
-		<label class = "logo">EDE Delivery</label>
-			<ul>
-				<li><a class="active" href="index.html">Home</a></li>
-				<li><a href="Shipment.html">Shipping</a></li>
-				<li><a href="tracking.html">Tracking</a></li>
-				<li><a href="login.html">Sign In/UP</a></li>
-				<li><a href="staffLogin.html">Staff</a></li>
-			</ul>
-			<label id="icon">
-				<i class="fas fa-bars"></i>
-			</label>
-	</nav>
+	<?php include 'menu.php';?>
 
 
 

@@ -18,20 +18,8 @@
 
 
 <body>
-	<nav class="head">
-		<label class="logo">EDE Delivery</label>
-		<ul>
-			<li><a class="active" href="index.html">Home</a></li>
-				<li><a href="Shipment.html">Shipping</a></li>
-				<li><a href="tracking.html">Tracking</a></li>
-				<li><a href="login.html">Sign In/UP</a></li>
-				<li><a href="profile.html">Profile</a></li>
-				<li><a href="staffLogin.html">Staff</a></li>
-		</ul>
-		<label id="icon">
-			<i class="fas fa-bars"></i>
-		</label>
-	</nav>
+	<?php include 'menu.php';?>
+
 	<div class="slider">
 	</div>
 
@@ -63,7 +51,7 @@
 	    <div class="step3"align="center" style="float:right; width:33.3%;">
 			<h3> Step 3</h3>
 			<img src="step3.jpg" width=20%;>
-			<h3>Ship Online </h3>
+			<h3>Ship Online</h3>
 	</div>
 </body>
 
