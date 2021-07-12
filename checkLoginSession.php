@@ -1,12 +1,21 @@
 <?php 
         $isLogin = false;
 		session_start();
-		if($_SESSION['customerEmail'] != null)
+
+		
+		if($_SESSION != null)
 		{
-			$session = $_SESSION['customerEmail'];
-			echo "<script type='text/javascript'>
-        	alert('Have Session');
-        	</script>";
-            $isLogin = true;
+			try{
+				$session = $_SESSION['customerEmail'];
+				echo "<script type='text/javascript'>
+        		alert('Have Session');
+        		</script>";
+           	 	$isLogin = true;
+			}catch(Exception $e){
+				
+			}
+			
 		}
+		
+		
 	?>

@@ -32,7 +32,7 @@
 
 	?>
 
-	<nav class="head">
+	<!-- <nav class="head">
 		<label class="logo">EDE Delivery</label>
 		<ul>
 			<li><a class="active" href="index.html">Home</a></li>
@@ -45,7 +45,7 @@
 		<label id="icon">
 			<i class="fas fa-bars"></i>
 		</label>
-	</nav>
+	</nav> -->
 
 <div class="staff-login">
 	<h1>Staff Login</h1>

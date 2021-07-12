@@ -63,7 +63,18 @@
 
 
 <body>
-    <?php include 'menu.php';?>
+<?php include 'checkLoginSession.php'; ?>
+
+<?php
+
+if ($isLogin) {
+	include 'loginedMenu.php';
+} else {
+	include 'menu.php';
+    
+}
+
+?>
 
     </br>
 
