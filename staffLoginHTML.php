@@ -19,6 +19,19 @@
 
 
 <body>
+
+	<?php include 'staffLoginSession.php'; ?>
+
+	<?php
+
+	if ($isLogin) {
+		include 'staffLoginedMenu.php';
+	} else {
+		include 'menu.php';
+	}
+
+	?>
+
 	<nav class="head">
 		<label class="logo">EDE Delivery</label>
 		<ul>
@@ -36,12 +49,12 @@
 
 <div class="staff-login">
 	<h1>Staff Login</h1>
-	<form action="#" method="post">
+	<form action="staffLogin.php" method="POST" id="staffLoginForm">
 		<p>Identify ID</p>
 		<input type="text" name="staffID" placeholder="Staff ID">
 		<p>Password</p>
-			<input tpye="password" name="password" placeholder="Password">
-			<button type="submit"><a href="verify.html">Login</a></button>
+			<input tpye="password" name="staffPassword" placeholder="Password">
+			<button type="submit" form="staffLoginForm" value="Submit" name="submit">Login</button>
 			<!-- 正式做會唔用href,宜家用住href黎show,所以click background會跳唔到form -->
 		</form>
 </div>
