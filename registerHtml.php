@@ -35,7 +35,7 @@
 
 					<br>
 					<label for="Name"><b></b></label>
-					<input type="text" placeholder="Name" name="name" id="name" required>
+					<input type="text" placeholder="Name (Your name)" name="name" id="name" required>
 
 					<br>
 					<label for="Phone Number"><b></b></label>
@@ -43,7 +43,7 @@
 
 					<br>
 					<label for="address"><b></b></label>
-					<input type="text" placeholder="Address" name="address" id="address" required>
+					<input type="text" placeholder="Address (eg. HK, NT, xx Road, xx Building, 14/Floor, 1405 Room)" name="address" id="address" required>
 
 					<br>
 					<label for="psw"><b></b></label>
@@ -51,7 +51,7 @@
 
 					<br>
 					<label for="psw-repeat"><b></b></label>
-					<input type="password" placeholder="Repeat Password" name="psw_repeat" id="psw_repeat" required>
+					<input type="password" placeholder="Repeat Password (Needs to the same as above)" name="psw_repeat" id="psw_repeat" required>
 					<hr>
 
 					<p>By creating an account means that you agree to our <a href="#">Terms & Privacy</a>.</p>

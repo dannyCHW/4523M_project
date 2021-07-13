@@ -2,7 +2,9 @@
     session_start();
     if($_SESSION['customerEmail'] != null)
     {
-        unset($_SESSION['customerEmail']);
+        session_unset();     // unset $_SESSION variable for the run-time 
+        session_destroy();
+        
     }
 
     echo "<script type='text/javascript'>

@@ -2,7 +2,7 @@
 <?php 
 if(isset($_POST['submit'])){
     $email = $_POST['cusEmail'];
-    $pwd = $_POST['cusPassword'];
+    //$pwd = $_POST['cusPassword'];
     require_once('connectDB.php');
     $sql = "SELECT customerEmail, customerPassword, customerName FROM customer WHERE customerEmail='$email'";
     $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
         } else {
             session_start();
             $_SESSION['customerEmail'] = $email;
-            $_SESSION['customerEmail'] = $rc['customerName'];
+            $_SESSION['customerName'] = $rc['customerName'];
             echo "<script type='text/javascript'>
             window.location.href = 'indexHtml.php';
             </script>";
