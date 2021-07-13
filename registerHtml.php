@@ -85,7 +85,7 @@
 if (isset($_POST['registerFormSubmit'])) {
 	$email = $_POST['email'];
 	$name = $_POST['name'];
-	$pwd = $_POST['psw'];
+	$password = $_POST['psw'];
 	$rePwd = $_POST['psw_repeat'];
 	$date = date("Y-m-d");
 	$phone = $_POST['phoneNum'];
@@ -97,7 +97,7 @@ if (isset($_POST['registerFormSubmit'])) {
 
 
 
-	if ($pwd != $rePwd) {
+	if ($password != $rePwd) {
 
 		echo "<script type='text/javascript'>
             alert('Password and repeat password does not match.');
@@ -115,12 +115,13 @@ if (isset($_POST['registerFormSubmit'])) {
 		} else {
 
 			$sql = "INSERT INTO Customer (customerEmail, customerName, customerPassword, accountCreationDate, phoneNumber, address)
-		VALUES ('$email', '$name', '$pwd', '$date', '$phone', '$address')";
+			VALUES ('$email', '$name', '$password', '$date', '$phone', '$address')";
 
 			if ($conn->query($sql) === TRUE) {
 
 				echo "<script type='text/javascript'>
             alert('Account cearted');
+			window.location.href = 'loginHtml.php';
             </script>";
 			} else {
 
