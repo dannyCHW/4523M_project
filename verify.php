@@ -1,5 +1,6 @@
 <!--if accept -> create record , change Weight -->
 <?php
+include 'staffLoginSession.php';
 if(isset($_POST['accept'])){
     $billNumber  = $_POST['billNumber'];
     $weight = $_POST['weight'];
@@ -18,7 +19,8 @@ if(isset($_POST['accept'])){
 
             echo "this order cannot verify";
         }else {
-              $sql ="UPDATE airwaybill SET weight=$weight WHERE airWaybillNo='$billNumber'";
+              session_start();
+              $sql ="UPDATE airwaybill SET weight=$weight,staffID= WHERE airWaybillNo='$billNumber'";
               $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
               $date = date('Y-m-d H:i:s');
               $sql ="INSERT INTO airwaybilldeliveryrecord (airWaybillNo, deliveryStatusID, recordDateTime, currentLocation) VALUES ('$billNumber','2','$date','HongKong');";  /// 加staffID? create in airWaybillNo??

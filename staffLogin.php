@@ -2,7 +2,7 @@
 <?php
 if(isset($_POST['submit'])){
     $staffID  = $_POST['staffID'];
-    $pwd = $_POST['staffPassword'];
+    $stfpwd = $_POST['staffPassword'];
     require_once('connectDB.php');
     $sql = "SELECT staffID, staffPassword,staffName FROM staff WHERE staffID='$staffID'";
     $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
@@ -15,21 +15,24 @@ if(isset($_POST['submit'])){
     } else {
         $rc = mysqli_fetch_assoc($rs);
 
-        if($rc['staffID'] != $staffID || $rc['staffPassword'] != $pwd){
+        if($rc['staffID'] != $staffID || $rc['staffPassword'] != $stfpwd){
             // echo "<script type='text/javascript'>
             // alert('Wrong email or password');
             // window.location.href = 'loginHtml.php';
             // </script>";
-            echo $rc['staffID']," | ", $rc['staffPassword'];
+            echo "<script type='text/javascript'>
+            alert('Wrong ID or password, please input again');
+            window.location.href = 'staffLoginHTML.php';
+            </script>";
 
         } else {
             echo "<h1>Hello $rc[staffName]</h1>";
             session_start();
-            $_SESSION['customerEmail'] = $email;
+            $_SESSION['staffID'] = $staffID;
 
             echo "<script type='text/javascript'>
             alert('Login');
-            window.location.href = 'loginHtml.php';
+            window.location.href = 'verifyHTML.php';
             </script>";
 
         }
