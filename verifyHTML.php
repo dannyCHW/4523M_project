@@ -19,6 +19,18 @@
 
 
 <body>
+
+	<?php
+
+	if ($verify) {
+		include 'verifyHTML.php';
+	} else {
+		include 'menu.php'; /// not done
+	}
+
+	?>
+
+
 	<nav class="head">
 		<label class = "logo">EDE Delivery</label>
 			<ul>
@@ -33,18 +45,17 @@
 			</label>
 	</nav>
 <!-- 偷塞位 -->
-  <h1>l</h1>
+  <br />
   <h1>View Finished Record:</h1>
   <!-- 偷塞位 -->
 
       <!-- form -->
     <div class="form">
         <table class="content-table">
-          <form action="#" method="post" class="verifyForm">
-            <input type="number"  placeholder="Confirmed Air Waybill Number" style="width: 20%;" required/>
-						<input type="number"  placeholder="Actual Weight" style="width: 10%;" min="0" max="1000" required><br/>
-            <input id="accept" type="submit" value="Accept" class="accept" />
-            <input id="reject" type="submit" value="Reject"class="reject" />
+          <form  action="verify.php" method="POST" id="verifyForm">
+            <input type="number"  name="billNumber" placeholder="Confirmed Air Waybill Number" style="width: 20%;" required/>
+						<input type="number"  name="weight"  placeholder="Actual Weight" style="width: 10%;" min="0" max="1000" required><br/>
+            <input style="width:15%;"id="accept" name = "accept" type="submit" value="Accept" class="accept" />
         </form>
     </div>
       <!-- form end -->
