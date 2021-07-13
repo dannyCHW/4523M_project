@@ -25,7 +25,7 @@
 	<?php
 
 	if ($isLogin) {
-		include 'staffLoginedMenu.php';
+		include 'verifyHTML.php';
 	} else {
 		include 'menu.php';
 	}
