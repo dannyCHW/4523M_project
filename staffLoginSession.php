@@ -1,12 +1,14 @@
 <?php
-      $isLogin = false;
+    $staffLogin = false;
 		session_start();
-		if($_SESSION['staffID'] != null)
-		{
-			$session = $_SESSION['staffID'];
-			echo "<script type='text/javascript'>
-        	alert('Have Session');
-        	</script>";
-            $isLogin = true;
+
+			try{
+				$staffID = $_SESSION['staffID'];
+           	 	$staffLogin = true;
+			}catch(Exception $e){
+
+
 		}
+
+
 	?>
