@@ -1,16 +1,12 @@
 <?php
-    $isLogin = false;
+    $staffLogin = false;
 		session_start();
 
-
-		if($_SESSION != null)
-		{
 			try{
 				$staffID = $_SESSION['staffID'];
-           	 	$isLogin = true;
+           	 	$staffLogin = true;
 			}catch(Exception $e){
 
-			}
 
 		}
 
