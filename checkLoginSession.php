@@ -6,10 +6,7 @@
 		if($_SESSION != null)
 		{
 			try{
-				$session = $_SESSION['customerEmail'];
-				echo "<script type='text/javascript'>
-        		alert('Have Session');
-        		</script>";
+				$cusEmail = $_SESSION['customerEmail'];
            	 	$isLogin = true;
 			}catch(Exception $e){
 				

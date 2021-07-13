@@ -9,8 +9,8 @@
 	<script src="http://kit.fontawesome.com/a076d05399.js"></script>
 	<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
 	<script>
-		$(document).ready(function () {
-			$('#icon').click(function () {
+		$(document).ready(function() {
+			$('#icon').click(function() {
 				$('ul').toggleClass('show');
 			});
 		});
@@ -19,18 +19,18 @@
 
 
 <body>
-	
-<?php include 'checkLoginSession.php'; ?>
 
-<?php
+	<?php include 'checkLoginSession.php'; ?>
 
-if ($isLogin) {
-	include 'loginedMenu.php';
-} else {
-	include 'menu.php';
-}
+	<?php
 
-?>
+	if ($isLogin) {
+		include 'loginedMenu.php';
+	} else {
+		include 'menu.php';
+	}
+
+	?>
 
 	</br></br>
 	<center>
@@ -56,26 +56,22 @@ if ($isLogin) {
 					<br>
 
 					<label for="airwaybillNum">Air Waybill’s Number</label>
-					<input type="text" class="t_output" placeholder="1012345678" name="airwaybillNum" id="airwaybillNum"
-						readonly>
+					<input type="text" class="t_output" placeholder="1012345678" name="airwaybillNum" id="airwaybillNum" readonly>
 
 					</br>
 					</br>
 					<label for="recordDatetime">Record’s Datetime</label>
-					<input type="text" class="t_output" placeholder="2021/4/5 14:00:34" name="recordDatetime"
-						id="recordDatetime" readonly>
+					<input type="text" class="t_output" placeholder="2021/4/5 14:00:34" name="recordDatetime" id="recordDatetime" readonly>
 
 					</br>
 					</br>
 					<label for="senderName">Sender’s Name</label>
-					<input type="text" class="t_output" placeholder="Mr. sender" name="senderName" id="senderName"
-						readonly>
+					<input type="text" class="t_output" placeholder="Mr. sender" name="senderName" id="senderName" readonly>
 
 					</br>
 					</br>
 					<label for="receiverPhoneNumber">Receiver’s Phone Number</label>
-					<input type="text" class="t_output" placeholder="852-61453728" name="receiverPhoneNumber"
-						id="receiverPhoneNumber" readonly>
+					<input type="text" class="t_output" placeholder="852-61453728" name="receiverPhoneNumber" id="receiverPhoneNumber" readonly>
 
 					</br>
 					</br>
@@ -85,14 +81,12 @@ if ($isLogin) {
 					</br>
 					</br>
 					<label for="shipmentStatusName">Shipment Status Name</label>
-					<input type="text" class="t_output" placeholder="Delivering" name="shipmentStatusName"
-						id="shipmentStatusName" readonly>
+					<input type="text" class="t_output" placeholder="Delivering" name="shipmentStatusName" id="shipmentStatusName" readonly>
 
 					</br>
 					</br>
 					<label for="currentLocation">Current Location</label>
-					<input type="text" class="t_output" placeholder="Hong kong" name="currentLocation"
-						id="currentLocation" readonly>
+					<input type="text" class="t_output" placeholder="Hong kong" name="currentLocation" id="currentLocation" readonly>
 
 
 					</br>

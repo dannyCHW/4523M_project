@@ -4,7 +4,7 @@ if(isset($_POST['submit'])){
     $email = $_POST['cusEmail'];
     $pwd = $_POST['cusPassword'];
     require_once('connectDB.php');
-    $sql = "SELECT customerEmail, customerPassword FROM customer WHERE customerEmail='$email'";
+    $sql = "SELECT customerEmail, customerPassword, customerName FROM customer WHERE customerEmail='$email'";
     $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
     if(mysqli_num_rows($rs) <= 0){
         echo "<script type='text/javascript'>
@@ -23,11 +23,10 @@ if(isset($_POST['submit'])){
             //echo $rc['customerEmail']," | ", $rc['customerPassword']," | ", $email," | ", $_POST['cusPassword'];
 
         } else {
-            echo "<h1>Hello $rc[customerEmail]</h1>";
             session_start();
             $_SESSION['customerEmail'] = $email;
+            $_SESSION['customerEmail'] = $rc['customerName'];
             echo "<script type='text/javascript'>
-            alert('Login');
             window.location.href = 'indexHtml.php';
             </script>";
 
@@ -44,3 +43,5 @@ if(isset($_POST['submit'])){
 echo"window.location.href = 'indexHtml.php';";
 
 ?>  
+
+

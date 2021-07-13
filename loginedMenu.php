@@ -6,7 +6,7 @@
 				<li><a href="trackingHtml.php">Tracking</a></li>
 				<li><a href="logOut.php">Log Out</a></li>
 				<li><a href="profileHtml.php">Profile</a></li>
-				<li><a href="staffLoginHtml.php">Staff</a></li>
+				<!-- <li><a href="staffLoginHtml.php">Staff</a></li> -->
 			</ul>
 			<label id="icon">
 				<i class="fas fa-bars"></i>

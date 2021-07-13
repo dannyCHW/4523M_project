@@ -38,7 +38,7 @@
 	<div class="Mian_Title">
 		<h1>Our services are all over the world！</h1>
 		<h3>Register your account now and use EDE Delivery to send your shipments instantly to get discounts.</h3>
-		<h3><a href="login.html" class="start">Delivery Now</a></h3>
+		<h3><a href="<?php if ($isLogin) { echo 'ShipmentHtml.php';} else {echo 'loginHtml.php';}?>" class="start">Delivery Now</a></h3>
 	</div>
 
 	<div class="subTitle">

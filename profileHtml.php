@@ -38,7 +38,7 @@
             opacity: 0.9;
         }
 
-        .deletebtn{
+        .deletebtn {
             background-color: #d11313;
             color: white;
             padding: 16px 20px;
@@ -53,8 +53,8 @@
     <script src="http://kit.fontawesome.com/a076d05399.js"></script>
     <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
-        $(document).ready(function () {
-            $('#icon').click(function () {
+        $(document).ready(function() {
+            $('#icon').click(function() {
                 $('ul').toggleClass('show');
             });
         });
@@ -63,18 +63,17 @@
 
 
 <body>
-<?php include 'checkLoginSession.php'; ?>
+    <?php include 'checkLoginSession.php'; ?>
 
-<?php
+    <?php
 
-if ($isLogin) {
-	include 'loginedMenu.php';
-} else {
-	include 'menu.php';
-    
-}
+    if ($isLogin) {
+        include 'loginedMenu.php';
+    } else {
+        include 'menu.php';
+    }
 
-?>
+    ?>
 
     </br>
 
@@ -99,8 +98,7 @@ if ($isLogin) {
                 <br>
 
                 <label>Address: </label><br>
-                <input type="text" class="p_input" id="address" name="address"
-                    placeholder="fake address, xxxxxxxx,xxxxxxx,xxxx">
+                <input type="text" class="p_input" id="address" name="address" placeholder="fake address, xxxxxxxx,xxxxxxx,xxxx">
                 <input type="checkbox" id="address_check" name="address_check" value="address_check">
                 <br>
 
@@ -125,7 +123,7 @@ if ($isLogin) {
 
         <center>
 
-        <h1 class="r_text">Delete Account</h1>
+            <h1 class="r_text">Delete Account</h1>
             <p class="r_text">Click the button if you need to delete your profile.</p>
             <button onclick="location.href='deleteAccount.html';" class="deletebtn">Delete Account</button>
             <hr>
