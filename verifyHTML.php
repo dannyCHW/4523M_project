@@ -65,19 +65,21 @@
     </div>
       <!-- form end -->
 
-    <thead>
-			<tr>
-				<th>Bill NO.</th><th>Sender's Email</th><th>Receiver Name</th><th>Receiver Phone</th><th>Receiver Address</th><th>Location ID</th>
-			</tr>
-			<tbody>
 		<?php
 			require_once('connectDB.php');
-			$sql = "SELECT airWaybillNo,customerEmail,receiverName,receiverPhoneNumber,receiverAddress From airwaybill WHERE staffID is null;";
-			$rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
+			$sql = "SELECT * FROM airwaybill ORDER BY airWaybillNo ASC ";
+		 	$rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
 			$rc = mysqli_fetch_assoc($rs);
+			echo"<thead>
+							<tr>
+								<th>Bill NO.</th><th>Sender's Email</th><th>Receiver Name</th><th>Receiver Phone</th><th>Receiver Address</th><th>Location ID</th>
+							</tr>
+					<tbody>";
 			while($rc = mysqli_fetch_array($rs)){
+				if($rc['staffID']=== NULL){
 				printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>",$rc['airWaybillNo'],$rc['customerEmail'],$rc['receiverName'],$rc['receiverPhoneNumber'],$rc['receiverAddress'],$rc['locationID']);
-		}
+				}
+			}
 		echo '</tbody></thead>';
 		mysqli_free_result($rs);
 		mysqli_close($conn);
