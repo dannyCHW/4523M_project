@@ -22,7 +22,8 @@ if(isset($_POST['accept'])){
           window.location.href = 'verifyHTML.php';
           </script>";
         }else {
-              $sql ="UPDATE airwaybill SET weight=$weight,staffID =$_SESSION['staffID'] WHERE airWaybillNo=$billNumber";
+
+              $sql ="UPDATE airwaybill SET weight=$weight,staffID = $_SESSION['staffID'] WHERE airWaybillNo=$billNumber";
               $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
               $date = date('Y-m-d H:i:s');
               $sql ="INSERT INTO airwaybilldeliveryrecord (airWaybillNo, deliveryStatusID, recordDateTime, currentLocation) VALUES ('$billNumber',2,'$date','HongKong');";  /// 加staffID? create in airWaybillNo??

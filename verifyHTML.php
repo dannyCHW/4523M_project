@@ -20,12 +20,17 @@
 
 <body>
 
+	<?php include 'staffLoginSession.php'; ?>
+
 	<?php
 
-	if ($verify) {
-		include 'verifyHTML.php';
+	if ($staffLogin) {
+
 	} else {
-		include 'menu.php'; /// not done
+			echo "<script type='text/javascript'>
+					alert('Login First');
+					window.location.href = 'staffLoginHTML.php';
+					</script>";
 	}
 
 	?>
@@ -38,14 +43,14 @@
 				<li><a href="update.html">Update</a></li>
 				<li><a href="report.html">View Report</a></li>
 				<li><a href="cancel.html">Cancel Order</a></li>
-        <li><a href="stafflogin.html">Logout</a></li>
+        <li><a href="staffLogout.php">Logout</a></li>
 			</ul>
 			<label id="icon">
 				<i class="fas fa-bars"></i>
 			</label>
 	</nav>
 <!-- 偷塞位 -->
-  <br />
+  <br /><br /><br />
   <h1>View Finished Record:</h1>
   <!-- 偷塞位 -->
 
@@ -54,8 +59,8 @@
         <table class="content-table">
           <form  action="verify.php" method="POST" id="verifyForm">
             <input type="number"  name="billNumber" placeholder="Confirmed Air Waybill Number" style="width: 20%;" required/>
-						<input type="number"  name="weight"  placeholder="Actual Weight" style="width: 10%;" min="0" max="1000" required><br/>
-            <input style="width:15%;"id="accept" name = "accept" type="submit" value="Accept" class="accept" />
+						<input type="number"  name="weight"  placeholder="Actual Weight" style="width: 10%;" min="0" max="10" required><br/>
+            <input style="width:15%;"id="accept" name = "accept" type="submit" value="Submit" class="accept" />
         </form>
     </div>
       <!-- form end -->
