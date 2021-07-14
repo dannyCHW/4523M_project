@@ -19,19 +19,31 @@
 
 
 <body>
+
+	<?php include 'checkLoginSession.php'; ?>
+
+	<?php
+
+	if ($isLogin) {
+		include 'loginedMenu.php';
+	} else {
+		include 'menu.php';
+	}
+	?>
 	<nav class="head">
 		<label class = "logo">EDE Delivery</label>
 			<ul>
-				<li><a href="verify.html">Verify</a></li>
-				<li><a href="update.html">Update</a></li>
-				<li><a href="report.html">View Report</a></li>
-				<li><a href="cancel.html">Cancel Order</a></li>
-        <li><a href="stafflogin.html">Logout</a></li>
+				<li><a href="verifyHTML.php">Verify</a></li>
+				<li><a href="updateHTML.php">Update</a></li>
+				<li><a href="reportHTML.php">View Report</a></li>
+				<li><a href="cancelHTML.php">Cancel Order</a></li>
+        <li><a href="staffLogout.php">Logout</a></li>
 			</ul>
 			<label id="icon">
 				<i class="fas fa-bars"></i>
 			</label>
 	</nav>
+
   <br/><br/><br/><br/>
   <h1>Cancel Order:</h1>
 
