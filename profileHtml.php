@@ -174,7 +174,7 @@ if (mysqli_num_rows($rs) > 0) {
     $dbcurrentPwd = $rc['customerPassword'];
 }
 
-$conn->close();
+
 
 echo "<script>
     document.getElementById('name').value = '$cusName';
@@ -187,19 +187,274 @@ echo "<script>
 
 <?php
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $inputName = $_POST['name'];
     $inputPhone = $_POST['phoneNumber'];
     $inputAddress = $_POST['address'];
     $inputNewPwd = $_POST['npassword'];
     $inputCurPwd = $_POST['currentPwd'];
 
-    // if(empty($inputName)){
 
-    // }
     echo "<script>
-    alert('$inputName | $inputPhone | $inputAddress');
+    alert('$inputName | $inputPhone | $inputAddress | $inputNewPwd | $inputCurPwd | $dbcurrentPwd');
 	 </script>";
+
+    if ($inputCurPwd != $dbcurrentPwd) {
+        echo "<script>
+        alert('Wrong password');
+	     </script>";
+    } else if (empty($inputName) && empty($inputPhone) && empty($inputAddress) && empty($inputNewPwd)) {
+        echo "<script>
+        alert('You did not select any checkbox.');
+         </script>";
+    } else {
+
+        require_once('connectDB.php');
+
+        if (empty($inputName) != true && empty($inputPhone) && empty($inputAddress) && empty($inputNewPwd)) {
+            //only name
+
+            $sqlName = "UPDATE customer SET customerName = '$inputName' WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sqlName)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sqlName . <br> . $conn->error');
+            </script>";
+            }
+
+        } else if (empty($inputName) && !empty($inputPhone) && empty($inputAddress) && empty($inputNewPwd)) {
+            //only phone
+
+            $sql = "UPDATE customer SET phoneNumber = '$inputPhone' WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sql . <br> . $conn->error');
+            </script>";
+            }
+
+        } else if (empty($inputName) && empty($inputPhone) && !empty($inputAddress) && empty($inputNewPwd)) {
+            //only address
+
+            $sql = "UPDATE customer SET address = '$inputAddress' WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sql . <br> . $conn->error');
+            </script>";
+            }
+
+        } else if (empty($inputName) && empty($inputPhone) && empty($inputAddress) && !empty($inputNewPwd)) {
+            //only password
+
+            $sql = "UPDATE customer SET customerPassword = '$inputNewPwd' WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sql . <br> . $conn->error');
+            </script>";
+            }
+
+        } else if (!empty($inputName) && !empty($inputPhone) && !empty($inputAddress) && !empty($inputNewPwd)) {
+            //all
+
+            $sql = "UPDATE customer SET customerPassword = '$inputNewPwd', address = '$inputAddress', phoneNumber = '$inputPhone', customerName = '$inputName'WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sql . <br> . $conn->error');
+            </script>";
+            }
+
+        } else if (!empty($inputName) && !empty($inputPhone) && !empty($inputAddress) && empty($inputNewPwd)) {
+            //name, phone, address
+
+            $sql = "UPDATE customer SET customerName = '$inputName', phoneNumber = '$inputPhone', address = '$inputAddress' WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sql . <br> . $conn->error');
+            </script>";
+            }
+
+        } else if (!empty($inputName) && !empty($inputPhone) && empty($inputAddress) && empty($inputNewPwd)) {
+            //name, phone
+
+            $sql = "UPDATE customer SET customerName = '$inputName', phoneNumber = '$inputPhone' WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sql . <br> . $conn->error');
+            </script>";
+            }
+
+        } else if (empty($inputName) && !empty($inputPhone) && !empty($inputAddress) && !empty($inputNewPwd)) {
+            //phone, address, password
+
+            $sql = "UPDATE customer SET customerName = '$inputName', phoneNumber = '$inputPhone', address = '$inputAddress', customerPassword = '$inputNewPwd' WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sql . <br> . $conn->error');
+            </script>";
+            }
+
+        } else if (empty($inputName) && empty($inputPhone) && !empty($inputAddress) && !empty($inputNewPwd)) {
+            //address, password
+
+            $sql = "UPDATE customer SET customerPassword = '$inputNewPwd', address = '$inputAddress' WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sql . <br> . $conn->error');
+            </script>";
+            }
+
+        } else if (!empty($inputName) && empty($inputPhone) && !empty($inputAddress) && empty($inputNewPwd)) {
+            //name, address
+
+            $sql = "UPDATE customer SET address = '$inputAddress', customerName = '$inputName'WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sql . <br> . $conn->error');
+            </script>";
+            }
+
+        } else if (!empty($inputName) && empty($inputPhone) && empty($inputAddress) && !empty($inputNewPwd)) {
+            //name, password
+
+            $sql = "UPDATE customer SET customerPassword = '$inputNewPwd', customerName = '$inputName'WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sql . <br> . $conn->error');
+            </script>";
+            }
+
+        } else if (empty($inputName) && !empty($inputPhone) && !empty($inputAddress) && empty($inputNewPwd)) {
+            //phone, address
+
+            $sql = "UPDATE customer SET  address = '$inputAddress', phoneNumber = '$inputPhone' WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sql . <br> . $conn->error');
+            </script>";
+            }
+
+        } else if (empty($inputName) && !empty($inputPhone) && empty($inputAddress) && !empty($inputNewPwd)) {
+            //phone, password
+
+            $sql = "UPDATE customer SET customerPassword = '$inputNewPwd', phoneNumber = '$inputPhone' WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sql . <br> . $conn->error');
+            </script>";
+            }
+
+        } else if (!empty($inputName) && empty($inputPhone) && !empty($inputAddress) && !empty($inputNewPwd)) {
+            //name, address, password
+
+            $sql = "UPDATE customer SET customerPassword = '$inputNewPwd', address = '$inputAddress', customerName = '$inputName' WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sql . <br> . $conn->error');
+            </script>";
+            }
+
+        } else if (!empty($inputName) && !empty($inputPhone) && empty($inputAddress) && !empty($inputNewPwd)) {
+            //name, phone, password
+
+            $sql = "UPDATE customer SET customerPassword = '$inputNewPwd', phoneNumber = '$inputPhone', customerName = '$inputName'WHERE customerEmail = '$cusEmail';";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script type='text/javascript'>
+            alert('Updated');
+            window.location.href = 'profileHtml.php';
+            </script>";
+            } else {
+                echo "<script type='text/javascript'>
+            alert('Error:  . $sql . <br> . $conn->error');
+            </script>";
+            }
+
+        }
+
+        $conn->close();
+    }
 }
 
 
