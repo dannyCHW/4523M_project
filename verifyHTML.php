@@ -25,7 +25,7 @@
 	<?php
 
 	if ($staffLogin) {
-		
+
 	} else {
 			echo "<script type='text/javascript'>
 					alert('You need to login First');
@@ -66,24 +66,21 @@
       <!-- form end -->
 
     <thead>
-
-      <tr>
-        <th>Bill NO.</th><th>Sender's Email</th><th>Receiver Name</th><th>Receiver Phone</th><th>Receiver Address</th><th>Location ID</th>
-      </tr>
-      <!-- fake record -->
-      <tbody>
-        <tr>
-          <td>00000047</td><td>simonhkg2002@gmail.com</td><td>Hotchner Cheung</td><td>95567188</td><td>R.Home</td><td>xxxx</td>
-        </tr>
-        <tr>
-          <td>00000056</td><td>simonhkg2002@gmail.com</td><td>Hotchner Cheung</td><td>95567188</td><td>R.Home</td><td>xxxx</td>
-        </tr>
-        <tr>
-          <td>00000061</td><td>tomy0711@gmail.com</td><td>Tomy Lee</td><td>27596115</td><td>R.Home</td><td>xxxx</td>
-        </tr>
-
-      </tbody>
-      <!-- fake record end -->
-    </thead>
+			<tr>
+				<th>Bill NO.</th><th>Sender's Email</th><th>Receiver Name</th><th>Receiver Phone</th><th>Receiver Address</th><th>Location ID</th>
+			</tr>
+			<tbody>
+		<?php
+			require_once('connectDB.php');
+			$sql = "SELECT airWaybillNo,customerEmail,receiverName,receiverPhoneNumber,receiverAddress From airwaybill WHERE staffID is null;";
+			$rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
+			$rc = mysqli_fetch_assoc($rs);
+			while($rc = mysqli_fetch_array($rs)){
+				printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>",$rc['airWaybillNo'],$rc['customerEmail'],$rc['receiverName'],$rc['receiverPhoneNumber'],$rc['receiverAddress'],$rc['locationID']);
+		}
+		echo '</tbody></thead>';
+		mysqli_free_result($rs);
+		mysqli_close($conn);
+		?>
 </body>
 </html>

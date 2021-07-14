@@ -18,6 +18,23 @@
 
 
 <body>
+
+	<?php include 'staffLoginSession.php'; ?>
+
+	<?php
+
+	if ($staffLogin) {
+
+	} else {
+			echo "<script type='text/javascript'>
+					alert('You need to login First');
+					window.location.href = 'staffLoginHTML.php';
+					</script>";
+	}
+
+	?>
+
+
 	<nav class="head">
 		<label class = "logo">EDE Delivery</label>
 			<ul>
@@ -25,7 +42,7 @@
 				<li><a href="update.html">Update</a></li>
 				<li><a href="report.html">View Report</a></li>
 			  <li><a href="cancel.html">Cancel Order</a></li>
-        <li><a href="stafflogin.html">Logout</a></li>
+        <li><a href="staffLogout.php">Logout</a></li>
 			</ul>
 			<label id="icon">
 				<i class="fas fa-bars"></i>

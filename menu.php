@@ -7,7 +7,7 @@
 				<li><a href="loginHtml.php">Login</a></li>
 				<li><a href="registerHtml.php">Register</a></li>
 				<li><a href="staffLoginHTML.php">Staff</a></li>
-			</ul>	
+			</ul>
 			<label id="icon">
 				<i class="fas fa-bars"></i>
 			</label>
