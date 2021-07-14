@@ -56,21 +56,25 @@
 
   <!-- form -->
   <div class="form">
-    <form action="#" method="post" class="verifyForm">
-      <input type="number"  placeholder="Air Waybill Number"  required/> <br />
+    <form action="update.php" method="post" class="updateForm">
 
-      <input list="status" placeholder="Newest Status"/>
+      <input type="number"  name="billNumber" placeholder="Air Waybill Number" required/> <br />
+
+      <input list="status" placeholder="Newest Status" name="input_status" autocomplete="off" required/>
       <datalist id="status">
         <option value="In Transit">
         <option value="Delivering">
         <option value="Completed">
       </datalist><br/>
 
-      <input type="text"  placeholder="Newest Location"  class="localtion"/> <br />
+      <input list="location" placeholder="Newest Location" name="input_location" autocomplete="off" required/>
+			<datalist id="location">
+        <option value="China Shanghao">
+        <option value="Japan">
+        <option value="Australia">
+      </datalist><br/>
 
-      <label for="size_3">* If null the value, it means no change</label><br/>
-
-      <input id="update" type="submit" value="Change" class="submit" />
+      <input type="submit" value="Change" class="submit" name="update"/>
 
 
   </form>
