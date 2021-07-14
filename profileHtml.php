@@ -97,7 +97,7 @@
                 <br>
 
                 <label>Phone: </label><br>
-                <input type="text" class="p_input" id="phoneNumber" name="phoneNumber" disabled>
+                <input type="text" class="p_input" id="phoneNumber" name="phoneNumber" onkeypress="return onlyNumberKey(event)" pattern="[0-9]{4}[0-9]{4}" title="Number, Format : xxxxxxxx" disabled>
                 <input type="checkbox" id="phone_check" value="phone_check" onclick="EnableDisableTextBox(this, 'phoneNumber')">
                 <br>
 
@@ -107,7 +107,7 @@
                 <br>
 
                 <label>New Password: </label><br>
-                <input type="password" class="p_input" id="password" name="npassword" disabled>
+                <input type="password" class="p_input" id="password" name="npassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" disabled>
                 <input type="checkbox" id="address_check" value="address_check" onclick="EnableDisableTextBox(this, 'password')">
                 <br>
 
@@ -151,6 +151,15 @@
         if (!txtBox.disabled) {
             txtBox.focus();
         }
+    }
+
+    function onlyNumberKey(evt) {
+
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
     }
 </script>
 
@@ -226,7 +235,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sqlName . <br> . $conn->error');
             </script>";
             }
-
         } else if (empty($inputName) && !empty($inputPhone) && empty($inputAddress) && empty($inputNewPwd)) {
             //only phone
 
@@ -242,7 +250,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sql . <br> . $conn->error');
             </script>";
             }
-
         } else if (empty($inputName) && empty($inputPhone) && !empty($inputAddress) && empty($inputNewPwd)) {
             //only address
 
@@ -258,7 +265,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sql . <br> . $conn->error');
             </script>";
             }
-
         } else if (empty($inputName) && empty($inputPhone) && empty($inputAddress) && !empty($inputNewPwd)) {
             //only password
 
@@ -274,7 +280,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sql . <br> . $conn->error');
             </script>";
             }
-
         } else if (!empty($inputName) && !empty($inputPhone) && !empty($inputAddress) && !empty($inputNewPwd)) {
             //all
 
@@ -290,7 +295,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sql . <br> . $conn->error');
             </script>";
             }
-
         } else if (!empty($inputName) && !empty($inputPhone) && !empty($inputAddress) && empty($inputNewPwd)) {
             //name, phone, address
 
@@ -306,7 +310,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sql . <br> . $conn->error');
             </script>";
             }
-
         } else if (!empty($inputName) && !empty($inputPhone) && empty($inputAddress) && empty($inputNewPwd)) {
             //name, phone
 
@@ -322,7 +325,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sql . <br> . $conn->error');
             </script>";
             }
-
         } else if (empty($inputName) && !empty($inputPhone) && !empty($inputAddress) && !empty($inputNewPwd)) {
             //phone, address, password
 
@@ -338,7 +340,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sql . <br> . $conn->error');
             </script>";
             }
-
         } else if (empty($inputName) && empty($inputPhone) && !empty($inputAddress) && !empty($inputNewPwd)) {
             //address, password
 
@@ -354,7 +355,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sql . <br> . $conn->error');
             </script>";
             }
-
         } else if (!empty($inputName) && empty($inputPhone) && !empty($inputAddress) && empty($inputNewPwd)) {
             //name, address
 
@@ -370,7 +370,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sql . <br> . $conn->error');
             </script>";
             }
-
         } else if (!empty($inputName) && empty($inputPhone) && empty($inputAddress) && !empty($inputNewPwd)) {
             //name, password
 
@@ -386,7 +385,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sql . <br> . $conn->error');
             </script>";
             }
-
         } else if (empty($inputName) && !empty($inputPhone) && !empty($inputAddress) && empty($inputNewPwd)) {
             //phone, address
 
@@ -402,7 +400,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sql . <br> . $conn->error');
             </script>";
             }
-
         } else if (empty($inputName) && !empty($inputPhone) && empty($inputAddress) && !empty($inputNewPwd)) {
             //phone, password
 
@@ -418,7 +415,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sql . <br> . $conn->error');
             </script>";
             }
-
         } else if (!empty($inputName) && empty($inputPhone) && !empty($inputAddress) && !empty($inputNewPwd)) {
             //name, address, password
 
@@ -434,7 +430,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sql . <br> . $conn->error');
             </script>";
             }
-
         } else if (!empty($inputName) && !empty($inputPhone) && empty($inputAddress) && !empty($inputNewPwd)) {
             //name, phone, password
 
@@ -450,7 +445,6 @@ if (isset($_POST['submit'])) {
             alert('Error:  . $sql . <br> . $conn->error');
             </script>";
             }
-
         }
 
         $conn->close();

@@ -1,4 +1,4 @@
-<nav class="head">
+<nav class="head" style="z-index: 5">
 		<label class = "logo">EDE Delivery</label>
 			<ul>
 				<li><a class="active" href="indexHtml.php">Home</a></li>

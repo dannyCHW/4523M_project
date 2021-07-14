@@ -39,7 +39,7 @@
 
 					<br>
 					<label for="Phone Number"><b></b></label>
-					<input type="text" placeholder="Phone Number (eg. 61234578)" name="phoneNum" id="phoneNum" onkeypress="return onlyNumberKey(event)" pattern="[0-9]{4}[0-9]{4}" title="Number, Format : xxx-xxxx-xxxx" required>
+					<input type="text" placeholder="Phone Number (eg. 61234578)" name="phoneNum" id="phoneNum" onkeypress="return onlyNumberKey(event)" pattern="[0-9]{4}[0-9]{4}" title="Number, Format : xxxxxxxx" required>
 
 					<br>
 					<label for="address"><b></b></label>
