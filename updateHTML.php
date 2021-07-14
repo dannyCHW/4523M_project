@@ -67,12 +67,14 @@
         <option value="Completed">
       </datalist><br/>
 
-      <input list="location" placeholder="Newest Location" name="input_location" autocomplete="off" required/>
+      <input list="location" placeholder="Newest Location" name="input_location" autocomplete="off" />
 			<datalist id="location">
         <option value="China Shanghao">
         <option value="Japan">
         <option value="Australia">
-      </datalist><br/>
+      </datalist><br/></br>
+
+			<label>*If the status is change to "In Transit", no need to input newest location</label></br></br>
 
       <input type="submit" value="Change" class="submit" name="update"/>
 
