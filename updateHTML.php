@@ -69,7 +69,7 @@
 
       <input list="location" placeholder="Newest Location" name="input_location" autocomplete="off" />
 			<datalist id="location">
-        <option value="China Shanghao">
+        <option value="China Shanghai">
         <option value="Japan">
         <option value="Australia">
       </datalist><br/></br>

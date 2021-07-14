@@ -7,7 +7,7 @@ include 'staffLoginSession.php';
     $newestStatus = $_POST['input_status'];
     $newestLocation = $_POST['input_location'];
     require_once('connectDB.php');
-     if( ( $newestStatus == "Delivering" || $newestStatus == "Completed") && ($newestLocation == "China Shanghao" || $newestLocation == "Japan"  || $newestLocation == "Australia") || ($newestStatus != "In Transit" && $newestLocation == "")){
+     if( ( $newestStatus == "Delivering" || $newestStatus == "Completed") && ($newestLocation == "China Shanghai" || $newestLocation == "Japan"  || $newestLocation == "Australia") || ($newestStatus != "In Transit" && $newestLocation == "")){
         //轉換
         if($newestStatus == "In Transit"){
           $int_status = 3;
@@ -17,7 +17,7 @@ include 'staffLoginSession.php';
           $int_status = 5;
         }
 
-        if ($newestLocation == "China Shanghao"){
+        if ($newestLocation == "China Shanghai"){
           $int_location = 1;
         }else if ($newestLocation == "Japan"){
           $int_location = 2;
