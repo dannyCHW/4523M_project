@@ -3,11 +3,10 @@
 include 'staffLoginSession.php';
 
   if(isset($_POST['update'])){
-    $billNo = $_POST['billNumber'];
+    $billNo  = $_POST['billNumber'];
     $newestStatus = $_POST['input_status'];
     $newestLocation = $_POST['input_location'];
-    require_once('connectDB.php');
-     if( ( $newestStatus == "Delivering" || $newestStatus == "Completed") && ($newestLocation == "China Shanghai" || $newestLocation == "Japan"  || $newestLocation == "Australia") || ($newestStatus != "In Transit" && $newestLocation == "")){
+     if( ( $newestStatus == "Delivering" || $newestStatus == "Completed") && ($newestLocation == "China Shanghai" || $newestLocation == "Japan"  || $newestLocation == "Australia") || ($newestStatus == "In Transit" && $newestLocation == "")){
         //轉換
         if($newestStatus == "In Transit"){
           $int_status = 3;
@@ -26,10 +25,10 @@ include 'staffLoginSession.php';
         }
   // end
         require_once('connectDB.php');
-        $sql = "SELECT deliveryStatusID FROM airwaybilldeliveryrecord WHERE airWaybillNo = $billNo order by airWaybillDeliveryRecordID DESC LIMIT 1;";
+        $sql = "SELECT deliveryStatusID FROM airwaybilldeliveryrecord WHERE airWaybillNo= $billNo order by airWaybillDeliveryRecordID DESC LIMIT 1";
         $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
 
-        if(mysqli_num_rows($rs) <= 0){
+        if(mysqli_num_rows($rs) > 0){
 
           $rc = mysqli_fetch_assoc($rs);
           $date = date('Y-m-d H:i:s');
@@ -42,8 +41,12 @@ include 'staffLoginSession.php';
             window.location.href = 'updateHTML.php';
             </script>";
           }else if($int_status == 4 && $rc['deliveryStatusID'] == 3){
-          $sql = "INSERT  INTO airwaybilldeliveryrecord (airWaybillNo, deliveryStatusID, recordDateTime, currentLocation) VALUES ('$billNo',4,'$date','$newestLocation');";
+            $sql = "INSERT  INTO airwaybilldeliveryrecord (airWaybillNo, deliveryStatusID, recordDateTime, currentLocation) VALUES ('$billNo',4,'$date','$newestLocation');";
             $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
+            echo "<script type='text/javascript'>
+            alert('Update locatopn and status to Delivering successfuly');
+            window.location.href = 'updateHTML.php';
+            </script>";
           }else if($int_status == 5 && $rc['deliveryStatusID'] == 4){
               $sql = "SELECT locationID FROM airwaybill WHERE airWaybillNo = $billNo;";
               $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
@@ -52,6 +55,10 @@ include 'staffLoginSession.php';
               if($int_location == $locationID){
                 $sql = "INSERT  INTO airwaybilldeliveryrecord (airWaybillNo, deliveryStatusID, recordDateTime, currentLocation) VALUES ('$billNo',5,'$date','$newestLocation');";
                 $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
+                echo "<script type='text/javascript'>
+                alert('Complete order successfuly');
+                window.location.href = 'updateHTML.php';
+                </script>";
               }else{
                 echo "<script type='text/javascript'>
                 alert('You cannot Completed this order, the location is not match.');
@@ -67,7 +74,7 @@ include 'staffLoginSession.php';
 
       }else{
         echo "<script type='text/javascript'>
-        alert('Cannot found this order, please check the order number that you input.');
+        alert('Cannot found this order, please check the oder number that you had input');
         window.location.href = 'updateHTML.php';
         </script>";
       }

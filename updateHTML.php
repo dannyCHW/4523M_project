@@ -58,7 +58,7 @@
   <div class="form">
     <form action="update.php" method="post" class="updateForm">
 
-      <input type="number"  name="billNumber" placeholder="Air Waybill Number" required/> <br />
+      <input type="number"  name="billNumber" placeholder="Air Waybill Number" required /> <br />
 
       <input list="status" placeholder="Newest Status" name="input_status" autocomplete="off" required/>
       <datalist id="status">
