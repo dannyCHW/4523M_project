@@ -25,10 +25,10 @@
 	<?php
 
 	if ($staffLogin) {
-
+		
 	} else {
 			echo "<script type='text/javascript'>
-					alert('Login First');
+					alert('You need to login First');
 					window.location.href = 'staffLoginHTML.php';
 					</script>";
 	}

@@ -26,9 +26,8 @@ if(isset($_POST['submit'])){
             </script>";
 
         } else {
-            echo "<h1>Hello $rc[staffName]</h1>";
             session_start();
-            $_SESSION['staffID'] = $staffID;
+            $_SESSION['staffID'] = $rc['staffID'];
 
             echo "<script type='text/javascript'>
             alert('Login');

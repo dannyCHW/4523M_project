@@ -10,12 +10,8 @@
     }
 
     if($_SESSION != null){
-      session_unset();
-      $staffID = $_SESSION['staffID'];
       $staffLogin = true;
-    }else {
-      $staffID = $_SESSION['staffID'];
-      $staffLogin = true;
+      $stfID = $_SESSION['staffID'];
     }
 
 	?>
