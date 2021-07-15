@@ -71,7 +71,8 @@ include 'staffLoginSession.php';
             window.location.href = 'updateHTML.php';
             </script>";
           }
-
+          mysqli_free_result($rs);
+          mysqli_close($conn);
       }else{
         echo "<script type='text/javascript'>
         alert('Cannot found this order, please check the oder number that you had input');

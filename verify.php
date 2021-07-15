@@ -33,6 +33,8 @@ if(isset($_POST['accept'])){
               window.location.href = 'verifyHTML.php';
               </script>";
         }
+        mysqli_free_result($rs);
+        mysqli_close($conn);
     }
 
 }
