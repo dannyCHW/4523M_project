@@ -116,10 +116,10 @@ if (isset($_GET['shipmentFormSubmit'])) {
 	$cusEmail = $_SESSION['customerEmail'];
 	$dateTime = date("Y-m-d h:i:s");
 
-	echo "<script type='text/javascript'>
-	        alert('yoyoyo | $inputReceiverName | $inputReceiverPhone | $inputLocationID | $inputAddress | $cusEmail | $dateTime');
+	// echo "<script type='text/javascript'>
+	//         alert('yoyoyo | $inputReceiverName | $inputReceiverPhone | $inputLocationID | $inputAddress | $cusEmail | $dateTime');
 			
-	        </script>";
+	//         </script>";
 
 	require_once('connectDB.php');
 

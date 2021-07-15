@@ -128,8 +128,8 @@
         <center>
 
             <h1 class="r_text">Delete Account</h1>
-            <p class="r_text">Click the button if you need to delete your profile.</p>
-            <button onclick="location.href='deleteAccount.html';" class="deletebtn">Delete Account</button>
+            <p class="r_text">Click the button if you need to delete your account.</p>
+            <button onclick="location.href='deleteAccountHtml.php';" class="deletebtn">Delete Account</button>
             <hr>
 
         </center>
@@ -178,6 +178,7 @@ $rs = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
 if (mysqli_num_rows($rs) > 0) {
     $rc = mysqli_fetch_assoc($rs);
+    $nonSessionCusName = $rc['customerName'];
     $dbphoneNum = $rc['phoneNumber'];
     $dbAddress = $rc['address'];
     $dbcurrentPwd = $rc['customerPassword'];
@@ -186,7 +187,7 @@ if (mysqli_num_rows($rs) > 0) {
 
 
 echo "<script>
-    document.getElementById('name').value = '$cusName';
+    document.getElementById('name').value = '$nonSessionCusName';
     document.getElementById('phoneNumber').value = '$dbphoneNum';
     document.getElementById('address').value = '$dbAddress';
 	 </script>";
@@ -204,9 +205,9 @@ if (isset($_POST['submit'])) {
     $inputCurPwd = $_POST['currentPwd'];
 
 
-    echo "<script>
-    alert('$inputName | $inputPhone | $inputAddress | $inputNewPwd | $inputCurPwd | $dbcurrentPwd');
-	 </script>";
+    //echo "<script>
+    //alert('$inputName | $inputPhone | $inputAddress | $inputNewPwd | $inputCurPwd | $dbcurrentPwd');
+	// </script>";
 
     if ($inputCurPwd != $dbcurrentPwd) {
         echo "<script>
@@ -227,7 +228,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sqlName)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+                alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {
@@ -242,7 +243,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+                alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {
@@ -257,7 +258,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+                alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {
@@ -272,7 +273,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+                alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {
@@ -287,7 +288,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+                alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {
@@ -302,7 +303,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+                alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {
@@ -317,7 +318,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+                alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {
@@ -332,7 +333,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+                alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {
@@ -347,7 +348,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+                alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {
@@ -362,7 +363,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+                alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {
@@ -377,7 +378,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+                alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {
@@ -392,7 +393,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+                alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {
@@ -407,7 +408,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+                alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {
@@ -422,7 +423,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+                alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {
@@ -437,7 +438,7 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>
-            alert('Updated');
+            alert('Updated, re login to see the changes.');
             window.location.href = 'profileHtml.php';
             </script>";
             } else {

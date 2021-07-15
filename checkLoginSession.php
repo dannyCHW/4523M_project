@@ -12,3 +12,5 @@ if ($_SESSION != null) {
 	} catch (Exception $e) {
 	}
 }
+
+?>
