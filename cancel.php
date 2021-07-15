@@ -26,6 +26,5 @@
       function deleteValue(number) {
                 document.getElementById('billno').value = number;
                 document.forms[0].submit();
-
 }
 </script>
