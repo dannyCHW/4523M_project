@@ -15,21 +15,25 @@
 		});
 	});
 	</script>
+
 </head>
 
 
 <body>
 
-	<?php include 'checkLoginSession.php'; ?>
+	<?php include 'staffLoginSession.php'; ?>
 
 	<?php
 
-	if ($isLogin) {
-		include 'loginedMenu.php';
+	if ($staffLogin) {
 	} else {
-		include 'menu.php';
+		echo "<script type='text/javascript'>
+				alert('You need to login First');
+				window.location.href = 'staffLoginHTML.php';
+				</script>";
 	}
 	?>
+
 	<nav class="head">
 		<label class = "logo">EDE Delivery</label>
 			<ul>
@@ -49,38 +53,12 @@
 
   <div class="form">
       <table class="content-table">
-        <form action="#" method="post" class="verifyForm">
-					<input type="number"  placeholder="Search By Air Waybill Number" style="width: 20%;" required/>
-					<input id="search" type="submit" value="Search" class="btnSearch" />
+        <form action="cancel.php" method="post" class="verifyForm">
+					<input name="billNumber" type="number"  placeholder="Search By Air Waybill Number" style="width: 20%;" required/>
+					<input name="search" type="submit" value="Search" class="btnSearch" />
       </form>
   </div>
 
-	<table class="content-table">
-
-		<thead>
-
-	<tr>
-		<th>Bill NO.</th><th>Customer's Email</th><th>Customer's Name</th><th>Receiver Phone</th><th>Total Price</th><th>Control</th>
-	</tr>
-	<!-- fake record -->
-	<tbody>
-		<tr>
-			<td>00000031</td><td>simonhkg2002@gmail.com</td><td>Hotchner Cheung</td><td>93846166</td><td>3720</td><td><button class="btnDelete">X</button></td>
-		</tr>
-		<tr>
-			<td>00000032</td><td>devil@gmail.com</td><td>Devil Lee</td><td>62916522</td><td>4510</td><td><button class="btnDelete">X</button></td>
-		</tr>
-		<tr>
-			<td>00000033</td><td>mary4423@gmail.com</td><td>Marry Chan</td><td>95252613</td><td>1678</td><td><button class="btnDelete">X</button></td>
-		</tr>
-		<tr>
-			<td>00000034</td><td>sam0930@gmail.com</td><td>Sam Tom</td><td>62829342</td><td>2380</td><td><button class="btnDelete">X</button></td>
-		</tr>
-	</tbody>
-	<!-- fake record end -->
-</thead>
-
-</table>
 
 
 
