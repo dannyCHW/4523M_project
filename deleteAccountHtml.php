@@ -194,6 +194,8 @@ if (isset($_POST['submit'])) {
 	        alert('account Deleted');
             window.location.href = 'indexHtml.php';
 	        </script>";
+
+            
         }
     }
 }
