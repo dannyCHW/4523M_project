@@ -179,7 +179,7 @@
 
 						echo "</table></br>";
 
-						$sql2 = "SELECT airWaybillDeliveryRecordID,deliveryStatusID,recordDateTime,currentLocation FROM airwaybilldeliveryrecord WHERE airWaybillNo = $displayAirWaybillNo ";
+						$sql2 = "SELECT airWaybillDeliveryRecordID,deliveryStatusID,recordDateTime,currentLocation FROM airwaybilldeliveryrecord WHERE airWaybillNo = $displayAirWaybillNo ORDER BY recordDateTime DESC";
 						$rs2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
 						if (mysqli_num_rows($rs2) >= 1) {
 							for ($i2 = 0; $i2 < mysqli_num_rows($rs2); $i2++) {
