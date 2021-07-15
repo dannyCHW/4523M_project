@@ -91,27 +91,6 @@
 	<center>
 		<div class="main">
 
-			
-				<!-- <table>
-					<tr>
-						<th>AirWaybill Number</th>
-						<th>Record Datetime</th>
-						<th>Sender Name</th>
-						<th>Receiver Name</th>
-						<th>Receiver Phone Number</th>
-						<th>Parcel Weight</th>
-						<th>Shipment Status Name</th>
-						<th>Current Location</th>
-					</tr>
-
-				</table> -->
-
-				<!-- <tr>
-					<td>Alfreds Futterkiste</td>
-					<td>Maria Anders</td>
-					<td>Germany</td>
-				</tr> -->
-
 				<?php
 
 
@@ -220,56 +199,6 @@
 
 				?>
 
-			
-
-			<!-- <form onsubmit="myFunction()">
-				<div class="container">
-					<h1 class="r_text">Result</h1>
-					<p class="r_text">Delivery Request info</p>
-					<hr>
-					<br>
-
-					<label for="airwaybillNum">Air Waybill’s Number</label>
-					<input type="text" class="t_output" placeholder="1012345678" name="airwaybillNum" id="airwaybillNum" readonly>
-
-					</br>
-					</br>
-					<label for="recordDatetime">Record’s Datetime</label>
-					<input type="text" class="t_output" placeholder="2021/4/5 14:00:34" name="recordDatetime" id="recordDatetime" readonly>
-
-					</br>
-					</br>
-					<label for="senderName">Sender’s Name</label>
-					<input type="text" class="t_output" placeholder="Mr. sender" name="senderName" id="senderName" readonly>
-
-					</br>
-					</br>
-					<label for="receiverPhoneNumber">Receiver’s Phone Number</label>
-					<input type="text" class="t_output" placeholder="852-61453728" name="receiverPhoneNumber" id="receiverPhoneNumber" readonly>
-
-					</br>
-					</br>
-					<label for="parcelWeight">Parcel’s Weight(kg)</label>
-					<input type="text" class="t_output" placeholder="45" name="parcelWeight" id="parcelWeight" readonly>
-
-					</br>
-					</br>
-					<label for="shipmentStatusName">Shipment Status Name</label>
-					<input type="text" class="t_output" placeholder="Delivering" name="shipmentStatusName" id="shipmentStatusName" readonly>
-
-					</br>
-					</br>
-					<label for="currentLocation">Current Location</label>
-					<input type="text" class="t_output" placeholder="Hong kong" name="currentLocation" id="currentLocation" readonly>
-
-
-					</br>
-					<hr>
-
-				</div>
-
-
-			</form> -->
 		</div>
 	</center>
 
