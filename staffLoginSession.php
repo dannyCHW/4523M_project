@@ -1,17 +1,15 @@
 <?php
-    if(!isset($_SESSION))
-    {
-        session_start();
-    }
-    else
-    {
-        session_destroy();
-        session_start();
-    }
-
-    if($_SESSION != null){
-      $staffLogin = true;
-      $stfID = $_SESSION['staffID'];
+  
+    $staffLogin = false;
+    session_start();
+    if ($_SESSION != null) {
+        try {
+            if (isset($_SESSION['staffID'])) {
+                $stfID = $_SESSION['staffID'];
+                $staffLogin = true;
+            }
+        } catch (Exception $e) {
+        }
     }
 
 	?>
