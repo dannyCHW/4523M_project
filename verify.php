@@ -62,7 +62,7 @@ if(isset($_POST['accept'])){
 
             //
 
-              $sql ="UPDATE airwaybill SET weight=$theweight,staffID = '$stfID' WHERE airWaybillNo=$billNumber";
+              $sql ="UPDATE airwaybill SET weight = $theweight, staffID = '$stfID', totalPrice = $ActualFee WHERE airWaybillNo=$billNumber";
               $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
               $date = date('Y-m-d H:i:s');
               $sql ="INSERT INTO airwaybilldeliveryrecord (airWaybillNo, deliveryStatusID, recordDateTime, currentLocation) VALUES ('$billNumber',2,'$date','HongKong');";  /// 加staffID? create in airWaybillNo??
