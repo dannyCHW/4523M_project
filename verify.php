@@ -49,10 +49,6 @@ if(isset($_POST['accept'])){
               
               echo "real fee: $response";
 
-            
-
-
-
             //
 
               $sql ="UPDATE airwaybill SET weight=$weight,staffID = '$stfID' WHERE airWaybillNo=$billNumber";
