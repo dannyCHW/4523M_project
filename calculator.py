@@ -5,8 +5,8 @@ app = Flask(__name__)
 @app.route("/api/discountCalculator/<yearAndFee>")
 def process(yearAndFee=None):
     x = yearAndFee.split("|")
-    year = int(x[0])
-    fee = int(x[1])
+    year = float(x[0])
+    fee = float(x[1])
     
     if year > 3 :
         discount = 1-0.3

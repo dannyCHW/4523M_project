@@ -1,11 +1,13 @@
 <?php
         session_start();
-        session_unset();     // unset $_SESSION variable for the run-time
-        echo "<script type='text/javascript'>
-                alert('Log Out');
-                window.location.href = 'staffLoginHTML.php';
-                </script>";
+    if($_SESSION['staffID'] != null)
+    {
+        unset($_SESSION['staffID']);     // unset $_SESSION variable for the run-time 
+        session_unset();
+    }
 
-        session_destroy();
-
+    echo "<script type='text/javascript'>
+            alert('Log Out');
+            window.location.href = 'staffLoginHTML.php';
+            </script>";
 ?>
