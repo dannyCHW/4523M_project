@@ -8,19 +8,20 @@ include 'staffLoginSession.php';
     $newestLocation = $_POST['input_location'];
      if( ( $newestStatus == "Delivering" || $newestStatus == "Completed") && ($newestLocation == "China Shanghai" || $newestLocation == "Japan"  || $newestLocation == "Australia") || ($newestStatus == "In Transit" && $newestLocation == "")){
         //轉換
-        if($newestStatus == "In Transit"){
-          $int_status = 3;
-        }else if($newestStatus == "Delivering"){
-          $int_status = 4;
-        }else if($newestStatus == "Completed"){
-          $int_status = 5;
-        }
-        $sql = "SELECT locationID FROM location WHERE locationName= '$newestLocation'";
+        require_once('connectDB.php');
+        $sql = "SELECT * FROM deliverystatus WHERE deliveryStatusName= '$newestStatus';";
         $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
         $rc = mysqli_fetch_assoc($rs);
-          $int_location = 1;
+        $int_status=$rc['deliveryStatusID'];
+        mysqli_free_result($rs);
+
+        $sql = "SELECT * FROM location WHERE locationName= '$newestLocation';";
+        $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
+        $rc = mysqli_fetch_assoc($rs);
+        $int_location=$rc['locationID'];
+        mysqli_free_result($rs);
+
   // end
-        require_once('connectDB.php');
         $sql = "SELECT deliveryStatusID FROM airwaybilldeliveryrecord WHERE airWaybillNo= $billNo order by airWaybillDeliveryRecordID DESC LIMIT 1";
         $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
 
