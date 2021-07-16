@@ -5,7 +5,7 @@ if(isset($_POST['accept'])){
     $billNumber  = $_POST['billNumber'];
     $theweight = $_POST['weight'];
     require_once('connectDB.php');
-    $sql = "SELECT deliveryStatusID FROM airwaybilldeliveryrecord WHERE airWaybillNo=$billNumber order by airWaybillDeliveryRecordID DESC LIMIT 1;";
+    $sql = "SELECT deliveryStatusID FROM airwaybilldeliveryrecord WHERE airWaybillNo =$billNumber order by airWaybillDeliveryRecordID DESC LIMIT 1;";
     $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
     if(mysqli_num_rows($rs) <= 0){
         echo "<script type='text/javascript'>
@@ -49,20 +49,20 @@ if(isset($_POST['accept'])){
             if (!extension_loaded("curl")) {
                 die("enable library curl first");
             }
-              
+
               $yearAndFee = "$years" . "|" . "$theRate";
-              $url = "http://127.0.0.1:8080/api/discountCalculator/$yearAndFee";   
-              
+              $url = "http://127.0.0.1:8080/api/discountCalculator/$yearAndFee";
+
               $curl = curl_init($url);
               curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-              $response = curl_exec($curl);   
+              $response = curl_exec($curl);
               curl_close($curl);
-              
+
               $ActualFee = $response;
 
             //
 
-              $sql ="UPDATE airwaybill SET weight = $theweight, staffID = '$stfID', totalPrice = $ActualFee WHERE airWaybillNo=$billNumber";
+              $sql ="UPDATE airwaybill SET weight = $theweight, staffID = '$stfID', totalPrice = '$ActualFee' WHERE airWaybillNo = $billNumber ;";
               $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
               $date = date('Y-m-d H:i:s');
               $sql ="INSERT INTO airwaybilldeliveryrecord (airWaybillNo, deliveryStatusID, recordDateTime, currentLocation) VALUES ('$billNumber',2,'$date','HongKong');";  /// 加staffID? create in airWaybillNo??
