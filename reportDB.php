@@ -4,7 +4,7 @@ include 'connectDB.php';//connection to database
 $pdf = new FPDF();
 $pdf->AddPage();
 
-$width_cell=array(20,20,20,20,20,20,20,60,60,60);
+$width_cell=array(30,20,20,30,40,20,20,60,60,60);
 $pdf->SetFont('Arial','B',8);
 
 //Background color of header//
@@ -12,14 +12,14 @@ $pdf->SetFillColor(193,229,252);
 
 // Header starts ///
 //First header column //
-$pdf->Cell($width_cell[0],10,'Bill Number',1,0,'C',true);
+$pdf->Cell($width_cell[0],10,'Air Waybill Number',1,0,'C',true);
 $pdf->Cell($width_cell[1],10,'Staff ID',1,0,'C',true);
 $pdf->Cell($width_cell[2],10,'Location ID',1,0,'C',true);
-$pdf->Cell($width_cell[3],10,'Re.Name',1,0,'C',true);
-$pdf->Cell($width_cell[4],10,'Re.Phone',1,0,'C',true);
+$pdf->Cell($width_cell[3],10,'Receiver Name',1,0,'C',true);
+$pdf->Cell($width_cell[4],10,'Receiver Phone Number',1,0,'C',true);
 $pdf->Cell($width_cell[5],10,'Weight',1,0,'C',true);
-$pdf->Cell($width_cell[6],10,'Total Proce',1,1,'C',true);
-$pdf->Cell($width_cell[7],10,'Sender Email',1,0,'C',true);
+$pdf->Cell($width_cell[6],10,'Total Price',1,1,'C',true);
+$pdf->Cell($width_cell[7],10,'Customer Email',1,0,'C',true);
 $pdf->Cell($width_cell[8],10,'Re.Address',1,0,'C',true);
 $pdf->Cell($width_cell[9],10,'Date',1,1,'C',true);
 //// header ends ///////
