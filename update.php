@@ -15,14 +15,10 @@ include 'staffLoginSession.php';
         }else if($newestStatus == "Completed"){
           $int_status = 5;
         }
-
-        if ($newestLocation == "China Shanghai"){
+        $sql = "SELECT locationID FROM location WHERE locationName= '$newestLocation'";
+        $rs = mysqli_query($conn, $sql)or die(mysqli_error($conn));
+        $rc = mysqli_fetch_assoc($rs);
           $int_location = 1;
-        }else if ($newestLocation == "Japan"){
-          $int_location = 2;
-        }else if ($newestLocation == "Australia"){
-          $int_location = 3;
-        }
   // end
         require_once('connectDB.php');
         $sql = "SELECT deliveryStatusID FROM airwaybilldeliveryrecord WHERE airWaybillNo= $billNo order by airWaybillDeliveryRecordID DESC LIMIT 1";
